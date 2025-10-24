@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Mời Cưới Của [Tên Cô Dâu] & [Tên Chú Rể]</title>
+    <!-- Tải Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tải Font Inter và Tông màu chủ đạo -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // ĐÃ THAY MÀU CHỦ ĐẠO SANG Đồng Đỏ Nhạt (ẤM ÁP HƠN)
+                        'primary-soft': '#AA8866', // Màu Đồng Đỏ Nhạt/Faded Copper (Ấm)
+                        'secondary-cream': '#FAF9F6', // Màu kem/Trắng ngà
+                        'text-dark': '#333333',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        // Có thể dùng thêm font "serif" cho phần tên để tăng tính trang trọng
+                        serif: ['Georgia', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Thiết lập nền cố định cho hiệu ứng Parallax nhẹ, đặc biệt đẹp trên mobile */
+        .parallax-bg {
+            /* Đã thay thế ảnh placeholder bằng file bạn vừa gửi */
+            background-image: url('__files/Ảnh thẻ.jpg'); 
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Tăng tính thẩm mỹ cho bộ đếm ngược */
+        .countdown-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Định dạng đặc biệt cho tên Cô Dâu & Chú Rể */
+        .couple-name {
+            font-family: 'serif';
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="font-sans text-text-dark bg-secondary-cream">
+
+    <!-- Section 1: Trang bìa (Cover) -->
+    <div class="parallax-bg min-h-screen flex flex-col justify-center items-center text-center p-4">
+        
+        <!-- Lớp phủ mờ để chữ dễ đọc hơn -->
+        <div class="bg-black/40 p-8 md:p-12 rounded-lg max-w-lg w-full">
+            <p class="text-xl sm:text-2xl text-secondary-cream font-light italic mb-4">Trân trọng kính mời</p>
+            
+            <!-- Tên Cô Dâu Chú Rể (Đã tối ưu kích thước cho mobile: text-5xl) -->
+            <h1 class="text-5xl sm:text-7xl lg:text-8xl text-secondary-cream couple-name mb-4 leading-tight">
+                Văn Hoàng
+            </h1>
+            <span class="text-3xl sm:text-4xl text-primary-soft font-serif mb-4 block">&amp;</span>
+            <h1 class="text-5xl sm:text-7xl lg:text-8xl text-secondary-cream couple-name mb-8 leading-tight">
+                Thúy Minh
+            </h1>
+
+            <p class="text-xl sm:text-2xl text-secondary-cream font-light mb-8">
+                Hạnh phúc được cùng nhau xây dựng tổ ấm
+            </p>
+
+            <!-- Nút xác nhận tham dự (Thay thế bằng link Google Form/Zalo) -->
+            <a href="#details" class="inline-block bg-primary-soft text-white font-bold py-3 px-8 rounded-full hover:bg-[#856C53] transition duration-300 shadow-lg">
+                Xem Chi Tiết Lễ Cưới
+            </a>
+        </div>
+    </div>
+
+    <!-- Section 2: Bộ Đếm Ngược & Thông tin Ngày -->
+    <div id="details" class="bg-secondary-cream py-16 md:py-24 text-center p-4">
+        
+        <h2 class="text-3xl sm:text-4xl font-serif text-primary-soft mb-4">
+            Ngày Hạnh Phúc
+        </h2>
+        
+        <!-- Cài đặt thông tin cô dâu chú rể -->
+        <p class="text-2xl sm:text-3xl text-text-dark mb-12">
+            Thứ Hai, Ngày 01 | Tháng 12 Năm 2025
+        </p>
+        
+        <!-- Bộ đếm ngược - Responsive Grid -->
+        <div id="countdown" class="grid grid-cols-4 gap-4 max-w-xl mx-auto">
+            <!-- Box Ngày -->
+            <div class="countdown-box p-4 rounded-lg">
+                <div id="days" class="text-4xl sm:text-5xl font-extrabold text-primary-soft">00</div>
+                <div class="text-sm sm:text-base mt-2 text-text-dark/70">Ngày</div>
+            </div>
+            <!-- Box Giờ -->
+            <div class="countdown-box p-4 rounded-lg">
+                <div id="hours" class="text-4xl sm:text-5xl font-extrabold text-primary-soft">00</div>
+                <div class="text-sm sm:text-base mt-2 text-text-dark/70">Giờ</div>
+            </div>
+            <!-- Box Phút -->
+            <div class="countdown-box p-4 rounded-lg">
+                <div id="minutes" class="text-4xl sm:text-5xl font-extrabold text-primary-soft">00</div>
+                <div class="text-sm sm:text-base mt-2 text-text-dark/70">Phút</div>
+            </div>
+            <!-- Box Giây -->
+            <div class="countdown-box p-4 rounded-lg">
+                <div id="seconds" class="text-4xl sm:text-5xl font-extrabold text-primary-soft">00</div>
+                <div class="text-sm sm:text-base mt-2 text-text-dark/70">Giây</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Section 3: Thông tin chi tiết Lễ Cưới -->
+    <div class="bg-gray-100 py-16 md:py-24 text-center p-4">
+        <h2 class="text-3xl sm:text-4xl font-serif text-primary-soft mb-12">
+            Địa Điểm Tổ Chức
+        </h2>
+
+        <!-- Grid 2 cột cho Lễ Thành Hôn và Tiệc Báo Hỷ -->
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            
+            <!-- Box 1: Lễ Thành Hôn (Nếu có) -->
+            <div class="bg-white p-8 rounded-xl shadow-xl transition-shadow hover:shadow-2xl">
+                <h3 class="text-2xl sm:text-3xl font-bold text-text-dark mb-4">LỄ THÀNH HÔN</h3>
+                <p class="text-lg text-gray-600 mb-2">Vào lúc: 14:00</p>
+                <p class="text-lg font-semibold text-primary-soft mb-4">Ngày: 01/12/2025</p>
+                <p class="text-lg text-gray-700 font-medium">Địa điểm: Khu 10, xã Dân Chủ, tỉnh Phú Thọ</p>
+                
+                <!-- Thay thế bằng link Google Maps -->
+                <a href="[Link Google Maps Lễ Thành Hôn]" target="_blank" class="inline-block mt-6 text-sm text-white bg-primary-soft py-2 px-4 rounded-full hover:bg-[#856C53] transition">
+                    Xem Bản Đồ
+                </a>
+            </div>
+
+            <!-- Box 2: Tiệc Báo Hỷ -->
+            <div class="bg-white p-8 rounded-xl shadow-xl transition-shadow hover:shadow-2xl">
+                <h3 class="text-2xl sm:text-3xl font-bold text-text-dark mb-4">TIỆC BÁO HỶ</h3>
+                <p class="text-lg text-gray-600 mb-2">Vào lúc: 14:00</p>
+                <p class="text-lg font-semibold text-primary-soft mb-4">Ngày: 01/12/2025</p>
+                <p class="text-lg text-gray-700 font-medium">Địa điểm: Khu 10, xã Dân Chủ, tỉnh Phú Thọ</p>
+                
+                <!-- Thay thế bằng link Google Maps -->
+                <a href="[Link Google Maps Tiệc Báo Hỷ]" target="_blank" class="inline-block mt-6 text-sm text-white bg-primary-soft py-2 px-4 rounded-full hover:bg-[#856C53] transition">
+                    Xem Bản Đồ
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Section 4: Lời Ngỏ & Xác Nhận (RSVP) -->
+    <div class="bg-secondary-cream py-16 md:py-24 text-center p-4">
+        <h2 class="text-3xl sm:text-4xl font-serif text-primary-soft mb-8">
+            Lời Ngỏ Chân Thành
+        </h2>
+        <p class="max-w-2xl mx-auto text-lg sm:text-xl text-gray-700 leading-relaxed italic mb-12">
+            "Sự hiện diện và lời chúc phúc của quý vị là niềm vinh hạnh lớn nhất đối với gia đình chúng tôi và cô dâu chú rể. Kính mong quý vị bớt chút thời gian quý báu để chung vui cùng chúng tôi trong ngày hạnh phúc này."
+        </p>
+
+        <!-- Nút Xác nhận Tham dự -->
+        <a href="[Link Google Form/Zalo để Xác Nhận Tham Dự]" target="_blank" class="inline-block bg-primary-soft text-white text-xl font-bold py-3 px-10 rounded-full shadow-xl hover:bg-[#856C53] transition duration-300">
+            Xác Nhận Tham Dự (RSVP)
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-text-dark py-6 text-center text-white/70">
+        <p>&copy; 2025 Văn Hoàng & Thúy Minh. Thiết kế bởi Đức Tiến.</p>
+    </footer>
+
+    <script>
+        // Cài đặt thông tin cô dâu chú rể
+        // THAY THẾ CHÍNH XÁC CÁC GIÁ TRỊ SAU
+        const BRIDE_NAME = "Thúy Minh";
+        const GROOM_NAME = "Văn Hoàng";
+        // Cập nhật ngày cưới: 01/12/2025, giờ là 2 giờ chiều
+        const WEDDING_DATE = "Dec 01, 2025 14:00:00"; // Định dạng: "Tháng Tên Ngày, Năm Giờ:Phút:Giây"
+
+        // Cập nhật tên lên tiêu đề trang
+        document.title = `Thiệp Mời Cưới Của ${BRIDE_NAME} & ${GROOM_NAME}`;
+
+        // Hàm đếm ngược
+        function setupCountdown() {
+            const countDownDate = new Date(WEDDING_DATE).getTime();
+            
+            const x = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+
+                // Tính toán thời gian
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Hiển thị kết quả
+                document.getElementById("days").innerHTML = String(days).padStart(2, '0');
+                document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
+                document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
+                document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
+
+                // Nếu hết thời gian
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "<div class='col-span-4 text-3xl font-bold text-primary-soft'>WE'RE MARRIED!</div>";
+                }
+            }, 1000);
+        }
+
+        document.addEventListener('DOMContentLoaded', setupCountdown);
+    </script>
+</body>
+</html>
